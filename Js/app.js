@@ -32,12 +32,7 @@ const updateUI = data => {
   }
 
   //update image night or day
-  let timeSrc = null;
-  if (IsDayTime) {
-    timeSrc = "img/day.svg";
-  } else {
-    timeSrc = "img/night.svg";
-  }
+  let timeSrc = IsDayTime ? "img/day.svg" : "img/night.svg";
 
   time.setAttribute("src", timeSrc);
 

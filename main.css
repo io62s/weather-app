@@ -8,19 +8,29 @@ body {
   max-width: 400px;
 }
 
+.heading {
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+}
+
 .input {
-  background: none;
+  background: white;
   outline: 0px !important;
-  border: 2px solid #afafaf;
+  border: none;
+  box-shadow: none;
+  transition: all 0.2s ease-out;
 }
 
 .input:focus,
 .input:active,
 .form-control:focus {
   outline: 0px !important;
-  background: none;
-  border: 2px solid #d6d6d6;
-  box-shadow: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 .icon {
   position: relative;
