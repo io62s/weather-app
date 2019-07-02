@@ -1,0 +1,34 @@
+body {
+  background: #eeedec;
+  letter-spacing: 0.2em;
+  font-size: 0.8em;
+}
+
+.container {
+  max-width: 400px;
+}
+
+.input {
+  background: none;
+  border: none;
+  outline: 0px !important;
+  border: 2px solid #d6d6d6;
+}
+
+.input:focus,
+.input:active,
+.form-control:focus {
+  outline: 0px !important;
+  background: none;
+  border: 2px solid #d6d6d6;
+  box-shadow: none;
+}
+.icon {
+  position: relative;
+  top: -50px;
+  border-radius: 50%;
+  width: 100px;
+  margin-bottom: -50px;
+  fill: orange;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
