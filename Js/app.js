@@ -55,9 +55,8 @@ const updateUI = data => {
         </div>
       </div>
   `;
-
-    extendedDiv.innerHTML = output;
   });
+  extendedDiv.innerHTML = output;
 
   //remove display: none class from card div
   if (card.classList.contains("d-none")) {
