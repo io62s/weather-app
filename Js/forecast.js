@@ -1,4 +1,4 @@
-const key = "uDhBVkMPB3YXF1uz1Fp04sY5627VlBRq";
+const key = " 	vVRnazC4H9iTU4IIDS7EykhgsVn5n6e4";
 //let state = {};
 
 //get current weather info
@@ -8,6 +8,7 @@ const getWeather = async cityCode => {
 
   const response = await fetch(`${base}${query}`);
   const data = await response.json();
+  //console.log(data[0]);
 
   return data[0];
 };
@@ -19,7 +20,17 @@ const getCity = async city => {
 
   const response = await fetch(`${base}${query}`);
   const data = await response.json();
-  //console.log(data[0].Key);
 
   return data[0];
+};
+
+//get 5 day city forecast
+const extendedForecast = async cityCode => {
+  const base = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/";
+  const query = `${cityCode}?apikey=${key}&metric=true`;
+
+  const response = await fetch(`${base}${query}`);
+  const data = await response.json();
+
+  return data.DailyForecasts;
 };

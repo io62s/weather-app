@@ -14,11 +14,13 @@
     <title>Weather</title>
   </head>
   <body>
-    <div class="container my-5 mx-auto">
+    <div class="container my-2 mx-auto">
       <h1 class="heading text-center my-4">Weather App</h1>
 
-      <form class="change-location my-4 text-center text-muted">
-        <label for="city">Enter a location for Weather information</label>
+      <form class="change-location my-4 text-center">
+        <label class="input-label" for="city"
+          >Enter a location for Weather information</label
+        >
         <input type="text" name="city" class="form-control p-4 input" />
       </form>
 
@@ -39,8 +41,10 @@
             <span>&deg;C</span>
           </div>
         </div>
+        <button class="btn">Extended Forecasts</button>
       </div>
     </div>
+    <div class="extended"></div>
     <script src="Js/forecast.js"></script>
     <script src="Js/app.js"></script>
   </body>

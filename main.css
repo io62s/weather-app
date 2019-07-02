@@ -1,7 +1,16 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 body {
   background: #e0ebf0;
   letter-spacing: 0.2em;
   font-size: 0.8em;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .container {
@@ -32,6 +41,7 @@ body {
 .card {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
+
 .icon {
   position: relative;
   top: -50px;
@@ -41,3 +51,61 @@ body {
   fill: orange;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
+
+.icon-small {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0.5rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.icon-small img {
+  width: 100%;
+}
+
+.extended {
+  display: grid;
+  width: 700px;
+  margin: 0 auto 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  background: white;
+  opacity: 0;
+  transform: translateY(20%);
+  pointer-events: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  background: white;
+  outline: none;
+  columns: #151515;
+  transition: all 0.2s ease-out;
+}
+.btn:hover {
+  background: #f1f1f1;
+}
+.btn:active,
+.btn:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+/*#383650*/
