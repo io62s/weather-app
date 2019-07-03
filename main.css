@@ -6,7 +6,7 @@
   margin: 0;
 }
 body {
-  background: #e0ebf0;
+  background: #e6ecf6;
   letter-spacing: 0.2em;
   font-size: 0.8em;
   height: 100vh;
@@ -58,9 +58,7 @@ body {
   display: flex;
   justify-items: center;
   align-items: center;
-  border-radius: 50%;
   margin: 0.5rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 .icon-small img {
   width: 100%;
@@ -72,7 +70,7 @@ body {
   margin: 0 auto 1rem;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-  padding: 20px;
+  padding: 20px 20px 5px;
   align-content: center;
   justify-items: center;
   text-align: center;
@@ -81,6 +79,7 @@ body {
   transform: translateY(20%);
   pointer-events: none;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
   transition: opacity 0.2s ease-out, transform 0.2s ease-out;
 }
 
@@ -96,11 +95,13 @@ body {
   background: white;
   outline: none;
   columns: #151515;
+  margin-top: 1rem;
   transition: all 0.2s ease-out;
 }
 .btn:hover {
   background: #f1f1f1;
 }
+
 .btn:active,
 .btn:focus {
   outline: none;
@@ -108,4 +109,26 @@ body {
   box-shadow: none;
 }
 
+.min-temp {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.max-temp {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.temps {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.temps .my-1 {
+  position: relative;
+  top: -10px;
+  align-self: center;
+}
 /*#383650*/

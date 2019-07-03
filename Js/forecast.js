@@ -1,4 +1,4 @@
-const key = " 	vVRnazC4H9iTU4IIDS7EykhgsVn5n6e4";
+const key = "aWwNsY0WNTUh8UjkzHhQpRdtdduF6tQb";
 //let state = {};
 
 //get current weather info

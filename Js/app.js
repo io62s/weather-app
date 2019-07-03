@@ -23,10 +23,9 @@ const updateUI = data => {
   //update details template
   details.innerHTML = `
     <h5 class="my-3">${EnglishName}</h5>
-    <div class="my-3">${WeatherText}</div>
-    <div class="display-4 my-4">
-      <span>${Value}</span>
-      <span>&deg;C</span>
+    <div class="my-2">${WeatherText}</div>
+    <div class="display-4">
+      <span>${Math.floor(Value)}&deg;C</span>
     </div>
   `;
 
@@ -35,7 +34,7 @@ const updateUI = data => {
 
   extFor.map(day => {
     output += `
-      <div class="text-muted">
+      <div class="text-muted temps">
         <div><strong>${new Date(day.Date)
           .toString()
           .substr(0, 10)}</strong></div>
@@ -44,15 +43,17 @@ const updateUI = data => {
         </div>
         <p>${day.Day.IconPhrase}</p>
         <div class="my-1">
-          <span>min: <strong>${
-            day.Temperature.Minimum.Value
-          }&deg;C</strong></span>
-        </div>
-        <div class=" my-1">
-          <span>max: <strong>${
+          <span class="max-temp">${Math.floor(
             day.Temperature.Maximum.Value
-          }&deg;C</strong> </span>
+          )}&deg;c</span>
+          <div>
+
+          <span class="min-temp">${Math.floor(
+            day.Temperature.Minimum.Value
+          )}&deg;c</span>
+          </div>
         </div>
+        
       </div>
   `;
   });
@@ -71,8 +72,8 @@ const updateUI = data => {
   let timeSrc = IsDayTime ? "img/day.svg" : "img/night.svg";
 
   //change body bg
-  const day = "#e0ebf0";
-  const night = "#383650";
+  const day = "#e6ecf6";
+  const night = "#243046";
   IsDayTime
     ? (body.style.backgroundColor = `${day}`)
     : (body.style.backgroundColor = `${night}`);
@@ -108,13 +109,21 @@ form.addEventListener("submit", e => {
   //update ui with new city
   updateCity(city)
     .then(data => {
-      console.log(data.extended);
+      //console.log(data.extended);
 
       updateUI(data);
     })
     .catch(error => console.log(error));
+
+  localStorage.setItem("city", city);
 });
 
 forecastBtn.addEventListener("click", () => {
   extendedDiv.classList.toggle("open");
 });
+
+if (localStorage.getItem("city")) {
+  updateCity(localStorage.getItem("city"))
+    .then(data => updateUI(data))
+    .catch(err => console.log(err));
+}
