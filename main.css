@@ -9,8 +9,7 @@ body {
   background: #e6ecf6;
   letter-spacing: 0.2em;
   font-size: 0.8em;
-  height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .container {
@@ -65,10 +64,10 @@ body {
 }
 
 .extended {
-  display: grid;
-  width: 700px;
+  display: none;
+  max-width: 700px;
   margin: 0 auto 1rem;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-gap: 20px;
   padding: 20px 20px 5px;
   align-content: center;
@@ -84,6 +83,7 @@ body {
 }
 
 .open {
+  display: grid;
   opacity: 1;
   transform: translateY(0);
   pointer-events: all;
